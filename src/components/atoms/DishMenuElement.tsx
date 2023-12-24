@@ -2,8 +2,6 @@ import {Typography} from "@components/atoms/Typography.tsx";
 import {CLR_WHITE} from "@src/constants";
 import styled from "styled-components";
 import {useMobile} from "@src/utils";
-import {useEffect, useRef} from "react";
-import {DotContainer} from "@components/atoms/DotContainer.tsx";
 
 export interface IDishMenuElementProps {
     name: string;
@@ -15,7 +13,7 @@ interface IDishMenuElementWrapperProps {
     isMobile: boolean
 }
 
-const DishMenuElementWrapper = styled.div(({isMobile}: IDishMenuElementWrapperProps) => ({
+const DishMenuElementWrapper = styled.div<IDishMenuElementWrapperProps>(({isMobile}: IDishMenuElementWrapperProps) => ({
     width: isMobile ? '100%' : '40%',
     display: 'flex'
 }))
@@ -37,7 +35,7 @@ const DotWrapper = styled.div`
 export const DishMenuElement = ({description, price, name}: IDishMenuElementProps) => {
     const isMobile = useMobile()
     return <DishMenuElementWrapper isMobile={isMobile}>
-        <div  style={{alignSelf: 'end'}}>
+        <div style={{alignSelf: 'end'}}>
             <div>
                 <Typography textAlign='center' size={32} color={CLR_WHITE}>
                     {name}
@@ -49,9 +47,7 @@ export const DishMenuElement = ({description, price, name}: IDishMenuElementProp
                 </Typography>
             </div>}
         </div>
-        <DotWrapper>
-        {/*    <DotContainer/>*/}
-        </DotWrapper>
+        <DotWrapper/>
         <DishPriceWrapper>
             <Typography textAlign='center' size={24} color={CLR_WHITE}>
                 {price} ֏

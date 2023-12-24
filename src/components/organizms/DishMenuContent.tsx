@@ -3,7 +3,7 @@ import {DishMenuElement} from "@components/atoms";
 import styled from "styled-components";
 
 export interface IDishMenuContentProps {
-    menu: MenuCategory
+    menu?: MenuCategory
 }
 
 const DishMenuContentWrapper = styled.div({

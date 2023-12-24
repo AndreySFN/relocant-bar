@@ -5,7 +5,6 @@ import {Contacts} from "@components/organizms/Contacts.tsx";
 import {LegalInformation} from "@components/organizms";
 import {FeaturesList} from "@components/organizms/FeaturesList.tsx";
 import {useJson} from "@src/useJson.ts";
-import {useEffect} from "react";
 import {Outlet} from "react-router";
 
 const MainContainer = styled.div({
