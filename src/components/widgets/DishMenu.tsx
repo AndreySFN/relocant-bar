@@ -28,7 +28,6 @@ const ContentWrapper = styled.div({
 const HeaderWrapper = styled.div({
     padding: '20px',
     width: '100%',
-    height: '90px',
     position: 'fixed',
     backgroundColor: '#704F32',
     top: 0,
