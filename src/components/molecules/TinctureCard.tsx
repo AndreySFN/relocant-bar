@@ -1,7 +1,11 @@
 import {FeatureCard} from "@components/atoms";
 import url from '@assets/tincture.jpg'
-export const TinctureCard = () => <FeatureCard
+
+export interface IBearCardProps {
+    minPrice?: number;
+}
+export const TinctureCard = ({minPrice}: IBearCardProps) => <FeatureCard
     title='🥛ДОМАШНИЕ НАСТОЙКИ🥃'
-    subtitle='от 1000֏'
+    subtitle={`от ${minPrice || '- '}֏`}
     imgSrc={url}
 />

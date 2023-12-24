@@ -3,6 +3,7 @@ import {BoardGamesCard} from "@components/molecules/BoardGamesCard.tsx";
 import styled from "styled-components";
 import {Block} from "@components/atoms";
 import {useMobile} from "@utils/useMobile.ts";
+import {Response} from "@src/types";
 
 interface IFeaturesGridProps {
     isMobile: boolean
@@ -15,14 +16,18 @@ const FeaturesGrid = styled.div<IFeaturesGridProps>(({isMobile}: IFeaturesGridPr
     gap: '20px',
     paddingBottom: '20px',
 }))
-export const Features = () => {
+
+export interface IFeaturesProps {
+    response?: Response
+}
+export const Features = ({response}: IFeaturesProps) => {
     const isMobile = useMobile()
     return <Block>
         <FeaturesGrid isMobile={isMobile}>
             <EventCard/>
             <MenuCard/>
-            <BeerCard/>
-            <TinctureCard/>
+            <BeerCard minPrice={response?.beerMinPrice}/>
+            <TinctureCard minPrice={response?.tinctureMinPrice}/>
         </FeaturesGrid>
         <BoardGamesCard/>
     </Block>
